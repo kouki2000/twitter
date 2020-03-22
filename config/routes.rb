@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tweets
   resources :users
+  resources :tweets do
+    resource :favorites, only: [:create, :destroy]
+  end
 end
